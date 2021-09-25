@@ -26,6 +26,7 @@
 
       #video {
         opacity: 0;
+        margin-top: 1rem;
       }
 
       .animacion {
@@ -37,6 +38,13 @@
         animation-iteration-count: infinite;
       }
 
+      /* .text-wrapper {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      } */
+
       .text-main {
         animation-iteration-count: 1;
         animation-timing-function: ease-out;
@@ -46,6 +54,7 @@
         top: 10;
         left: 100;
         font-family: "Arial";
+        text-align: center;
       }
 
       #text-main-2 {
@@ -57,7 +66,7 @@
       }
 
       #text-main-4 {
-        animation-delay: 5000ms;
+        animation-delay: 5500ms;
       }
 
       @keyframes efecto {
@@ -120,7 +129,8 @@
         Presiona para que salga el espiritu
       </button>
     </div>
-    <div>
+
+    <div class="text-wrapper">
       <h1 id="text-main" class="text-main">No te entiendo nada</h1>
       <h1 id="text-main-2" class="text-main">No te entiendo nada</h1>
       <h1 id="text-main-3" class="text-main">No te entiendo nada</h1>
@@ -148,12 +158,16 @@
         setTimeout(() => {
           video.style.opacity = "1";
 
+          document
+            .querySelectorAll(".text-main")
+            .forEach((element) => element.classList.remove("animacion"));
+
           document.querySelector("body").classList.add("animacion-bg");
         }, 7950);
       });
     </script>
 
-    <footer style="font-size: 10px; text-align: center">
+    <footer style="font-size: 6px; text-align: center">
       Hecho por @jonathansolisc
     </footer>
   </body>
